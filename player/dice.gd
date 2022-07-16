@@ -21,3 +21,6 @@ func Aiming(direction: Vector2, lenght: float):
 
 func StopAiming():
 	$Arrow.visible = false
+
+func GetLinearVelocity():
+	return $Dice.linear_velocity

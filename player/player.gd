@@ -17,8 +17,7 @@ func scale(velocity, factor=SCALE_FACTOR) -> int:
 	
 
 func slow_time() -> void:
-	var dice = $DiceGroup/Dice
-	var current_velocity = dice.linear_velocity.length() 
+	var current_velocity = $DiceGroup/Dice.GetLinearVelocity().length()
 	Engine.time_scale = scale(current_velocity)
 	
 
