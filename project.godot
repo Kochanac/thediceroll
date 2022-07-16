@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player/actions/action.gd"
 }, {
+"base": "Action",
+"class": "AttackSwipe",
+"language": "GDScript",
+"path": "res://player/actions/attack_swipe.gd"
+}, {
 "base": "Node2D",
 "class": "Dice",
 "language": "GDScript",
 "path": "res://player/dice.gd"
+}, {
+"base": "Area2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://enemies/enemy_base.gd"
 }, {
 "base": "Action",
 "class": "Move",
@@ -26,7 +36,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Action": "",
+"AttackSwipe": "",
 "Dice": "",
+"Enemy": "",
 "Move": ""
 }
 
