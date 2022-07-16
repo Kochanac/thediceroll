@@ -26,12 +26,14 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB"):
+		slow_time()
 		is_aiming = true
 		self.action_start = get_global_mouse_position()
 		self.focused_dice = $DiceGroup/Dice
 		self.connect("action", focused_dice, "PerformAction")
 		
 	if event.is_action_released("LMB"):
+		Engine.time_scale = 1
 		is_aiming = false
 		var action_end = get_global_mouse_position()
 		var act: Action = Move.new(
@@ -45,6 +47,9 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("RMB"):
 		var action_start = get_global_mouse_position()
+
+	
+
 	if event.is_action_pressed("ui_slow_time"):
 		slow_time()
 	if event.is_action_released("ui_slow_time"):
