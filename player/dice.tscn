@@ -20,6 +20,7 @@ mass = 102.041
 physics_material_override = ExtResource( 1 )
 gravity_scale = 15.0
 linear_velocity = Vector2( -10000, 0 )
+angular_damp = 2.0
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Dice"]

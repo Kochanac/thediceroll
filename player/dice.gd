@@ -32,3 +32,6 @@ var linear_velocity setget SetLinearVelocity, GetLinearVelocity
 
 func TeleportWithVector(vec: Vector2):
 	$Dice.AddTeleport(vec)
+
+func ApplyImpulse(vec: Vector2):
+	$Dice.AddMove(vec)

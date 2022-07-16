@@ -1,6 +1,6 @@
 extends Node2D
 
-const SCALE_FACTOR = 100
+const SCALE_FACTOR = 400
 
 const MOUSE_SCALE: float = 2.0
 
