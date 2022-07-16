@@ -2,6 +2,8 @@ class_name Move
 
 extends Action
 
+var MOVE_K = 2
+
 var force: float
 
 func Act(d: Dice) -> void:
@@ -10,4 +12,4 @@ func Act(d: Dice) -> void:
 
 func _init(force: float, direction: Vector2):
 	self.direction = direction
-	self.force = force
+	self.force = force * MOVE_K
