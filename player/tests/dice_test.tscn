@@ -22,7 +22,7 @@ zoom = Vector2( 2, 2 )
 material = SubResource( 3 )
 position = Vector2( -500, 0 )
 rotation = 1.5708
-scale = Vector2( 3, 1 )
+scale = Vector2( 3, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall"]
@@ -40,7 +40,7 @@ margin_bottom = 10.0
 material = SubResource( 3 )
 position = Vector2( 0, 300 )
 rotation = 3.31613
-scale = Vector2( 4, 1 )
+scale = Vector2( 4, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall3"]
@@ -58,7 +58,7 @@ margin_bottom = 10.0
 material = SubResource( 3 )
 position = Vector2( 500, 0 )
 rotation = 1.5708
-scale = Vector2( 3, 1 )
+scale = Vector2( 3, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall2"]

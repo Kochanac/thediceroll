@@ -39,5 +39,3 @@ func _input(event: InputEvent) -> void:
 		slow_time()
 	if event.is_action_released("ui_slow_time"):
 		Engine.time_scale = 1
-
-
