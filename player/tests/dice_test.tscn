@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/materials/wall.tres" type="PhysicsMaterial" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 150, 10 )
+
+[node name="dice_test" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Test tower" type="Node2D" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="Test tower"]
+material = SubResource( 3 )
+position = Vector2( -500, 0 )
+rotation = 1.5708
+scale = Vector2( 3, 1 )
+physics_material_override = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall"]
+material = SubResource( 2 )
+use_parent_material = true
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Test tower/wall/CollisionShape2D"]
+margin_left = -150.0
+margin_top = -10.0
+margin_right = 150.0
+margin_bottom = 10.0
+
+[node name="wall3" type="StaticBody2D" parent="Test tower"]
+material = SubResource( 3 )
+position = Vector2( 0, 300 )
+rotation = 3.31613
+scale = Vector2( 4, 1 )
+physics_material_override = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall3"]
+material = SubResource( 2 )
+use_parent_material = true
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Test tower/wall3/CollisionShape2D"]
+margin_left = -150.0
+margin_top = -10.0
+margin_right = 150.0
+margin_bottom = 10.0
+
+[node name="wall2" type="StaticBody2D" parent="Test tower"]
+material = SubResource( 3 )
+position = Vector2( 500, 0 )
+rotation = 1.5708
+scale = Vector2( 3, 1 )
+physics_material_override = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall2"]
+material = SubResource( 2 )
+use_parent_material = true
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Test tower/wall2/CollisionShape2D"]
+margin_left = -150.0
+margin_top = -10.0
+margin_right = 150.0
+margin_bottom = 10.0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/materials/dice_1.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://images/tmp/dice.png" type="Texture" id=2]
+[ext_resource path="res://player/dice.gd" type="Script" id=3]
+
+[node name="Dice" type="RigidBody2D"]
+mass = 102.041
+physics_material_override = ExtResource( 1 )
+gravity_scale = 15.0
+linear_velocity = Vector2( -10000, 0 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -2.5, 0.286503 )
+scale = Vector2( 0.338, 0.336192 )
+texture = ExtResource( 2 )
+
+[node name="DiceCollisionShape" type="CollisionPolygon2D" parent="."]
+position = Vector2( -43.3, -50 )
+polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )

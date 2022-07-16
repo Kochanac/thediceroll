@@ -8,10 +8,51 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Action",
+"language": "GDScript",
+"path": "res://player/actions/action.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Dice",
+"language": "GDScript",
+"path": "res://player/dice.gd"
+}, {
+"base": "Action",
+"class": "Move",
+"language": "GDScript",
+"path": "res://player/actions/move.gd"
+} ]
+_global_script_class_icons={
+"Action": "",
+"Dice": "",
+"Move": ""
+}
+
 [application]
 
 config/name="You - The Roll"
+run/main_scene="res://player/tests/dice_test.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
+[input]
+
+LMB={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+RMB={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [physics]
 
