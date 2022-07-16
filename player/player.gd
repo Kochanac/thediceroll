@@ -1,15 +1,26 @@
 extends Node2D
 
-signal action(dice, action)
-# signal action(dice: Dice, action: Action)
-
-var action_start: Vector2 = Vector2(0, 0)
-
+const SCALE_FACTOR = 100
 
 const MOUSE_SCALE: float = 2.0
 
 var is_aiming: bool = false
 var focused_dice: Dice = null
+
+signal action(dice, action)
+# signal action(dice: Dice, action: Action)
+
+var action_start: Vector2 = Vector2(0, 0)
+
+func scale(velocity, factor=SCALE_FACTOR) -> int:
+	return factor / (velocity + factor + 1)
+	
+
+func slow_time() -> void:
+	var dice = $DiceGroup/Dice
+	var current_velocity = dice.linear_velocity.length() 
+	Engine.time_scale = scale(current_velocity)
+	
 
 func _ready() -> void:
 	pass
@@ -35,6 +46,11 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("RMB"):
 		var action_start = get_global_mouse_position()
+	if event.is_action_pressed("ui_slow_time"):
+		slow_time()
+	if event.is_action_released("ui_slow_time"):
+		Engine.time_scale = 1
+
 
 func _process(_delta: float) -> void:
 	if focused_dice == null:
