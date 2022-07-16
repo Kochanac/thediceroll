@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func PerformAction(a: Action) -> void:
-	a.Act($Dice)
+	a.Act(self)
 
 func Aiming(direction: Vector2, lenght: float):
 	$Arrow.position = $Dice.position
@@ -22,5 +22,16 @@ func Aiming(direction: Vector2, lenght: float):
 func StopAiming():
 	$Arrow.visible = false
 
-func GetLinearVelocity():
+func GetLinearVelocity() -> Vector2:
 	return $Dice.linear_velocity
+
+func SetLinearVelocity(vel: Vector2):
+	$Dice.linear_velocity = vel
+
+var linear_velocity setget SetLinearVelocity, GetLinearVelocity
+
+func TeleportWithVector(vec: Vector2):
+	$Dice.AddTeleport(vec)
+
+func ApplyImpulse(vec: Vector2):
+	$Dice.AddMove(vec)

@@ -2,15 +2,15 @@ class_name Move
 
 extends Action
 
-var MOVE_K = 2
-
-var force: float
+# var MOVE_K = 300 for ApplyImpulse
+var MOVE_K = 4
 
 # d: Dice
-func Act(d) -> void:
+func Act(_d) -> void:
+	var d: Dice = _d
+	#d.ApplyImpulse(direction.normalized() * force)
 	d.linear_velocity += direction.normalized() * force
 
 
-func _init(force: float, direction: Vector2):
-	self.direction = direction
-	self.force = force * MOVE_K
+func _init(direction: Vector2, force: float).(direction, force):
+	self.force *= MOVE_K
