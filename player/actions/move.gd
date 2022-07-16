@@ -6,7 +6,8 @@ var MOVE_K = 2
 
 var force: float
 
-func Act(d: Dice) -> void:
+# d: Dice
+func Act(d) -> void:
 	d.linear_velocity += direction.normalized() * force
 
 

@@ -1,6 +1,6 @@
 class_name Dice
 
-extends RigidBody2D
+extends Node2D
 
 const STOP_VELOCITY: int = 25
 
@@ -11,4 +11,13 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func PerformAction(a: Action) -> void:
-	a.Act(self)
+	a.Act($Dice)
+
+func Aiming(direction: Vector2, lenght: float):
+	$Arrow.position = $Dice.position
+	$Arrow.visible = true
+	$Arrow.rotation = direction.angle()
+	$Arrow.scale = Vector2(lenght / $Arrow.texture.get_width(), 1)
+
+func StopAiming():
+	$Arrow.visible = false
