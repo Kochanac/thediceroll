@@ -3,7 +3,7 @@ class_name Move
 extends Action
 
 # var MOVE_K = 300 for ApplyImpulse
-var MOVE_K = 2
+var MOVE_K = 4
 
 # d: Dice
 func Act(_d) -> void:

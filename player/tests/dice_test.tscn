@@ -20,9 +20,9 @@ zoom = Vector2( 2, 2 )
 
 [node name="wall" type="StaticBody2D" parent="Test tower"]
 material = SubResource( 3 )
-position = Vector2( -500, 0 )
+position = Vector2( -700, 0 )
 rotation = 1.5708
-scale = Vector2( 3, 2 )
+scale = Vector2( 6, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall"]
@@ -40,7 +40,7 @@ margin_bottom = 10.0
 material = SubResource( 3 )
 position = Vector2( 0, 300 )
 rotation = 3.31613
-scale = Vector2( 4, 2 )
+scale = Vector2( 6, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall3"]
@@ -56,9 +56,9 @@ margin_bottom = 10.0
 
 [node name="wall2" type="StaticBody2D" parent="Test tower"]
 material = SubResource( 3 )
-position = Vector2( 500, 0 )
+position = Vector2( 700, 0 )
 rotation = 1.5708
-scale = Vector2( 3, 2 )
+scale = Vector2( 6, 2 )
 physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall2"]
@@ -67,6 +67,24 @@ use_parent_material = true
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Test tower/wall2/CollisionShape2D"]
+margin_left = -150.0
+margin_top = -10.0
+margin_right = 150.0
+margin_bottom = 10.0
+
+[node name="wall4" type="StaticBody2D" parent="Test tower"]
+material = SubResource( 3 )
+position = Vector2( 0, -800 )
+rotation = 3.14159
+scale = Vector2( 6, 2 )
+physics_material_override = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test tower/wall4"]
+material = SubResource( 2 )
+use_parent_material = true
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Test tower/wall4/CollisionShape2D"]
 margin_left = -150.0
 margin_top = -10.0
 margin_right = 150.0
