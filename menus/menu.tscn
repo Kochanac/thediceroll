@@ -1,5 +1,6 @@
 [gd_scene format=2]
 
+<<<<<<< Updated upstream
 [node name="Main menu" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
@@ -38,3 +39,28 @@ margin_right = 300.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 300, 80 )
 text = "Exit (you can just close a winow)"
+=======
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -896.0
+margin_bottom = -480.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="start" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -75.0
+margin_right = 300.0
+margin_bottom = 75.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+>>>>>>> Stashed changes

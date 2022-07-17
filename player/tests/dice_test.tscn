@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/materials/wall.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://enemies/basic/enemy_lox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ShaderMaterial" id=3]
 
@@ -47,10 +48,10 @@ use_parent_material = true
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Test tower/wall3/CollisionShape2D"]
-margin_left = -150.0
-margin_top = -10.0
-margin_right = 150.0
-margin_bottom = 10.0
+margin_left = -150.198
+margin_top = -12.9499
+margin_right = 149.802
+margin_bottom = 7.05013
 
 [node name="wall2" type="StaticBody2D" parent="Test tower"]
 material = SubResource( 3 )
@@ -89,3 +90,13 @@ margin_right = 150.0
 margin_bottom = 10.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1, -199 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="EnemyBasic" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 1, 89 )
+
+[connection signal="body_entered" from="Node2D/EnemyBasic/hurtbox" to="Node2D/EnemyBasic" method="body_entered"]
+
+[editable path="Node2D/EnemyBasic"]
