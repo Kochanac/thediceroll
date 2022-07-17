@@ -43,7 +43,7 @@ func start_time() -> void:
 func start_aim() -> void:
 	slow_time()
 	is_aiming = true
-	self.action_start = get_global_mouse_position()
+	self.action_start = get_viewport().get_mouse_position()
 	self.focused_dice = $DiceGroup/Dice
 	self.connect("action", focused_dice, "PerformAction")
 
@@ -51,7 +51,7 @@ func stop_aim() -> Vector2:
 	if not is_slowing:
 		start_time()
 	is_aiming = false
-	return get_global_mouse_position()
+	return get_viewport().get_mouse_position()
 
 func _ready() -> void:
 	pass
@@ -121,7 +121,7 @@ func _process(_delta: float) -> void:
 		return
 
 	if is_aiming:
-		var mousePosition = get_global_mouse_position()
+		var mousePosition = get_viewport().get_mouse_position()
 		focused_dice.Aiming(
 			action_start.direction_to(mousePosition),
 			min(action_start.distance_to(mousePosition) * MOUSE_SCALE,
