@@ -4,8 +4,12 @@ extends Node2D
 
 const STOP_VELOCITY: int = 25
 
+const EXP_FOR_LEVEL: int = 2
 var level = 1
 var boost = 0
+# every EXP_FOR_LEVEL exp is a new level
+var experience = 0
+
 
 
 func _physics_process(delta: float) -> void:
