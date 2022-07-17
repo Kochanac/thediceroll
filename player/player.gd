@@ -26,6 +26,7 @@ var focused_dice: Dice = null
 signal action(dice, action)
 # signal action(dice: Dice, action: Action)
 
+
 var action_start: Vector2 = Vector2(0, 0)
 
 var current_attack = AttackSwipe
@@ -55,9 +56,22 @@ func stop_aim() -> Vector2:
 		start_time()
 	is_aiming = false
 	return get_viewport().get_mouse_position()
+	
+func _on_Enemy_died(enemy):
+	print('enemy died')
+	var dice = $DiceGroup/Dice
+	if enemy is Enemy:
+		print("dice gained exp")
+		dice.experience += 1
+		if dice.experience == dice.EXP_FOR_LEVEL:
+			dice.experience = 0
+			dice.level += 1
+			print("dice gained a new level")
+		
 
 func _ready() -> void:
 	pass
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB") or event.is_action_pressed("RMB"):
@@ -120,6 +134,8 @@ func _process(_delta: float) -> void:
 		move_stamina / max_move_stamina,
 		power_stamina / max_power_stamina
 	)
+	var dice = $DiceGroup/Dice
+	$"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)".SetLevel(dice.level)
 	if focused_dice == null:
 		return
 
