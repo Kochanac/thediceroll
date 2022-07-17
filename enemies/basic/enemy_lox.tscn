@@ -27,3 +27,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 shape = SubResource( 2 )
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="hurtbox" to="." method="body_entered"]

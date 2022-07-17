@@ -157,7 +157,7 @@ func _process(_delta: float) -> void:
 		power_stamina / max_power_stamina
 	)
 	var dice = $DiceGroup/Dice
-	$"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)".SetLevel(dice.level)
+	$"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)".SetLevel(dice.experience)
 	if focused_dice == null:
 		return
 
