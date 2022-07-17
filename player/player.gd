@@ -2,6 +2,7 @@ extends Node2D
 
 const SCALE_FACTOR = 400
 
+
 const MOUSE_SCALE: float = 2.0
 
 var is_aiming: bool = false

@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tower/tower.tres" type="TileSet" id=2]
 
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.962185, 0.987395, 1 )
+colors = PoolColorArray( 0, 0.113725, 0.239216, 1, 0, 0, 0, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
 [node name="Tower" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1963, 4879.5 )
+scale = Vector2( 10, 20000 )
+texture = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
