@@ -2,12 +2,14 @@ class_name Player
 
 extends Node2D
 
+var money = 0
+
 var is_invinc: bool = false
 
 const SCALE_FACTOR = 400
 
 const ACTION_COST: float = 500.0
-const TIME_COST: float = 500.0
+const TIME_COST: float = 1500.0
 
 var max_time_stamina: float = 1000.0
 var max_move_stamina: float = 1000.0
