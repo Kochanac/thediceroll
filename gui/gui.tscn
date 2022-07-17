@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://margin_containter.gd" type="Script" id=1]
+[ext_resource path="res://gui/margin_containter.gd" type="Script" id=1]
 [ext_resource path="res://images/gui/vedro_64x64.png" type="Texture" id=2]
 [ext_resource path="res://images/gui/progress_200x20.png" type="Texture" id=3]
 
