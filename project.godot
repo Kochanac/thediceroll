@@ -48,6 +48,10 @@ config/name="You - The Roll"
 run/main_scene="res://tower/tower.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Autoload="*res://misc/autoload.gd"
+
 [display]
 
 window/size/width=1280

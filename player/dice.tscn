@@ -34,6 +34,9 @@ scale = Vector2( 0.63, 0.63 )
 polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )
 disabled = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dice"]
+shape = SubResource( 1 )
+
 [node name="hurtbox" type="Area2D" parent="Dice"]
 collision_layer = 2
 collision_mask = 2
