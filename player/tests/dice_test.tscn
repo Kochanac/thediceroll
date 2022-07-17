@@ -13,7 +13,6 @@ extents = Vector2( 150, 10 )
 [node name="dice_test" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 
 [node name="Test tower" type="Node2D" parent="."]
 

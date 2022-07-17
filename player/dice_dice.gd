@@ -10,7 +10,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 		teleports.pop_front()
 	while moves.size() > 0:
 		var move = moves.front()
-		state.apply_impulse(self.transform.origin, move)
+		state.apply_central_impulse(move)
 		moves.pop_front()
 
 func AddTeleport(vec: Vector2):

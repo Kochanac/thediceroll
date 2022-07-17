@@ -16,3 +16,4 @@ func Act(d) -> void:
 	dice.linear_velocity = \
 		(SWIPE_VELOCITY_ADD + dice.linear_velocity.length()) * direction
 	
+	

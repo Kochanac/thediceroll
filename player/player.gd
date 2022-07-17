@@ -1,6 +1,6 @@
 extends Node2D
 
-const SCALE_FACTOR = 600
+const SCALE_FACTOR = 400
 
 const ACTION_COST: float = 500.0
 const TIME_COST: float = 500.0
@@ -30,8 +30,11 @@ var action_start: Vector2 = Vector2(0, 0)
 
 var current_attack = AttackSwipe
 
-func scale(velocity, factor=SCALE_FACTOR) -> int:
-	return factor / (velocity + factor + 1)
+func scale(velocity, factor=SCALE_FACTOR) -> float:
+	return max(
+		factor / (velocity + factor + 1) - 0.2,
+		0.1
+	)
 
 func slow_time() -> void:
 	var current_velocity = $DiceGroup/Dice.GetLinearVelocity().length()
