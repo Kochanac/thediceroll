@@ -141,6 +141,8 @@ func _on_damage_taken(damage: int) -> void:
 	invinc.connect("timeout", self, "invinc_end")
 
 func invinc_start() -> void:
+	stop_aim()
+	start_time()
 	is_invinc = true
 	$DiceGroup/Dice.Disable()
 
