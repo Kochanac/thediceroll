@@ -31,8 +31,6 @@ var focused_dice: Dice = null
 
 const EXPERIENCE: int = 400
 
-var money = 0
-
 const STAMINA_BUFF: int = 50
 
 signal action(dice, action)
