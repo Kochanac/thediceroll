@@ -61,8 +61,7 @@ margin_bottom = 98.0
 [node name="level" type="TextureProgress" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer2"]
 margin_right = 200.0
 margin_bottom = 20.0
-min_value = 1.0
-max_value = 20.0
+max_value = 1000.0
 value = 1.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 3 )

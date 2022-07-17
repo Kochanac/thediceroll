@@ -18,3 +18,7 @@ func _ready():
 
 func register(enemy):
 	enemy.connect("died", $Player, "_on_Enemy_died")
+
+
+func _on_hurtbox_area_entered(area):
+	pass # Replace with function body.
