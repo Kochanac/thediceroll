@@ -45,9 +45,8 @@ _global_script_class_icons={
 [application]
 
 config/name="You - The Roll"
-run/main_scene="res://player/tests/enemy_test.tscn"
-config/icon="res://icon.png"
 run/main_scene="res://tower/tower.tscn"
+config/icon="res://icon.png"
 
 [display]
 

@@ -31,4 +31,7 @@ margin_top = -720.0
 margin_right = 0.0
 margin_bottom = 0.0
 
+[node name="hurtbox" parent="DiceGroup/Dice/Dice" index="3"]
+collision_mask = 0
+
 [editable path="DiceGroup/Dice"]
