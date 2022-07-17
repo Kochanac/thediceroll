@@ -27,6 +27,12 @@ var is_aiming: bool = false
 var is_slowing: bool = false
 var focused_dice: Dice = null
 
+const EXPERIENCE: int = 400
+
+var money = 0
+
+const STAMINA_BUFF: int = 50
+
 signal action(dice, action)
 # signal action(dice: Dice, action: Action)
 
@@ -67,15 +73,15 @@ func _on_Enemy_died(enemy):
 	var dice = $DiceGroup/Dice
 	if enemy is Enemy:
 		print("dice gained exp")
-		dice.experience += 1000
-		if dice.experience == dice.EXP_FOR_LEVEL:
-			dice.experience = 0
+		dice.experience += EXPERIENCE
+		if dice.experience >= dice.EXP_FOR_LEVEL:
+			dice.experience %= 1000
 			dice.level += 1
 			
-#			var ActiveCamera = get_node("DiceGroup/Dice/Dice/Camera2D")
-#			print(ActiveCamera.is_current())
+			var ActiveCamera = get_node("DiceGroup/Dice/Dice/Camera2D")
+			print(ActiveCamera.is_current())
 #			ActiveCamera.zoom = ActiveCamera.zoom.linear_interpolate( (Vector2(1,1) * 0.3), 0.01)
-#			ActiveCamera.zoom = Vector2(0.5, 0.5)
+			ActiveCamera.zoom = Vector2(0.5, 0.5)
 			
 #			var animation = $DiceGroup/Dice/Dice/AnimatedSprite
 #			animation.play()
@@ -87,6 +93,15 @@ func _on_Enemy_died(enemy):
 			sprite.texture = load("res://images/dice/" + sprite_name)
 			print("dice gained a new level")
 		
+		
+func _on_Coin_gained(coin):
+	print("coin gained")
+	max_time_stamina += STAMINA_BUFF
+	max_move_stamina += STAMINA_BUFF
+	max_power_stamina += STAMINA_BUFF
+	money += 1
+	
+
 
 func _ready() -> void:
 	var animation = $DiceGroup/Dice/Dice/AnimatedSprite

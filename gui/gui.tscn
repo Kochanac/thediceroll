@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gui/margin_containter.gd" type="Script" id=1]
 [ext_resource path="res://images/gui/vedro_64x64.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://images/gui/move bar bg.png" type="Texture" id=8]
 [ext_resource path="res://images/gui/attack bar bg.png" type="Texture" id=9]
 [ext_resource path="res://images/gui/xp bar fg.png" type="Texture" id=10]
+[ext_resource path="res://gui/Label.gd" type="Script" id=11]
 
 [node name="GUI" type="MarginContainer"]
 anchor_left = 0.5
@@ -61,6 +62,7 @@ margin_top = 25.0
 margin_right = 95.0
 margin_bottom = 39.0
 text = "x 60"
+script = ExtResource( 11 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)"]
 margin_top = 78.0

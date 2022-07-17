@@ -12,7 +12,7 @@ func _ready():
 # Tower/EnemyGroup/
 # говнокод
 	print(self.get_parent().get_parent())
-	var tower: Tower = self.get_parent().get_parent()
+	var tower = self.get_parent().get_parent()
 	tower.register(self)
 
 func die():
