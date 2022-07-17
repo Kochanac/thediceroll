@@ -1,4 +1,5 @@
 class_name Action
+extends Node2D
 
 var direction: Vector2
 var force: float

@@ -4,6 +4,9 @@ extends Node2D
 
 const STOP_VELOCITY: int = 25
 
+var level = 1
+var boost = 0
+
 
 func _physics_process(delta: float) -> void:
 	#if self.linear_velocity.length() < STOP_VELOCITY:
@@ -27,6 +30,10 @@ func GetLinearVelocity() -> Vector2:
 
 func SetLinearVelocity(vel: Vector2):
 	$Dice.linear_velocity = vel
+
+func GetDicePosition() -> Vector2:
+	return $Dice.position
+
 
 var linear_velocity setget SetLinearVelocity, GetLinearVelocity
 

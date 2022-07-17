@@ -7,7 +7,7 @@
 [ext_resource path="res://player/dice_dice.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.0156
+radius = 32.0624
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,5 +34,9 @@ scale = Vector2( 0.63, 0.63 )
 polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )
 disabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dice"]
+[node name="hurtbox" type="Area2D" parent="Dice"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dice/hurtbox"]
 shape = SubResource( 1 )
