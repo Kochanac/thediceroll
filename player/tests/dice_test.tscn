@@ -97,6 +97,4 @@ position = Vector2( -1, -199 )
 [node name="EnemyBasic" parent="Node2D" instance=ExtResource( 3 )]
 position = Vector2( 1, 89 )
 
-[connection signal="body_entered" from="Node2D/EnemyBasic/hurtbox" to="Node2D/EnemyBasic" method="body_entered"]
-
 [editable path="Node2D/EnemyBasic"]

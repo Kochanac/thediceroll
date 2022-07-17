@@ -30,10 +30,11 @@ var focused_dice: Dice = null
 signal action(dice, action)
 # signal action(dice: Dice, action: Action)
 
-
 var action_start: Vector2 = Vector2(0, 0)
 
 var current_attack = AttackSwipe
+
+#onready var player = get_node("DiceGroup/Dice/AnimationPlayer")
 
 func scale(velocity, factor=SCALE_FACTOR) -> float:
 	return max(
@@ -66,15 +67,30 @@ func _on_Enemy_died(enemy):
 	var dice = $DiceGroup/Dice
 	if enemy is Enemy:
 		print("dice gained exp")
-		dice.experience += 1
+		dice.experience += 1000
 		if dice.experience == dice.EXP_FOR_LEVEL:
 			dice.experience = 0
 			dice.level += 1
+			
+#			var ActiveCamera = get_node("DiceGroup/Dice/Dice/Camera2D")
+#			print(ActiveCamera.is_current())
+#			ActiveCamera.zoom = ActiveCamera.zoom.linear_interpolate( (Vector2(1,1) * 0.3), 0.01)
+#			ActiveCamera.zoom = Vector2(0.5, 0.5)
+			
+#			var animation = $DiceGroup/Dice/Dice/AnimatedSprite
+#			animation.play()
+#			player.play("new_level")
+#			player.seek(0)
+#			ActiveCamera.zoom = Vector2(1, 1) 
+			var sprite_name = str(dice.level) + ".png"
+			var sprite = $DiceGroup/Dice/Dice/Sprite
+			sprite.texture = load("res://images/dice/" + sprite_name)
 			print("dice gained a new level")
 		
 
 func _ready() -> void:
-	pass
+	var animation = $DiceGroup/Dice/Dice/AnimatedSprite
+#	player.add_animation("new_level", animation)
 	
 
 func _input(event: InputEvent) -> void:
