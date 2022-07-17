@@ -47,12 +47,15 @@ _global_script_class_icons={
 config/name="You - The Roll"
 run/main_scene="res://player/tests/enemy_test.tscn"
 config/icon="res://icon.png"
-<<<<<<<Updatedupstreamrun/main_scene="res://tower/tower.tscn"
+run/main_scene="res://tower/tower.tscn"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
