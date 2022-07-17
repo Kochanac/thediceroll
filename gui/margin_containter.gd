@@ -7,5 +7,6 @@ func SetStaminas(timeStamina: float, moveStamina: float, powerStamina: float):
 	$"hbox/stamina bars/PowerBar".value = powerStamina * 835
 
 
-func SetLevel(level: float):
-	$"hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer2/level".value = level
+func SetLevel(experience: float):
+	$"hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer2/level".value = \
+		experience * 835 / 1000
