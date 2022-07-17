@@ -12,7 +12,7 @@ var experience = 0
 
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	$hurtbox.position = $Dice.position
 
 func PerformAction(a: Action) -> void:
@@ -20,7 +20,7 @@ func PerformAction(a: Action) -> void:
 
 
 func Disable():
-	$Dice/Sprite.modulate = Color(1, 1, 1, 0.8)
+	$Dice/Sprite.modulate = Color(1, 1, 1, 0.6)
 	$Dice/circle_shape.set_deferred("disabled", true)
 	$hurtbox.set_deferred("monitoring", false)
 	
