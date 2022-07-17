@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nice_dice.png-86803906cd0c50e21ddadce9f28683a7.stex"
+path="res://.import/castle tile 32x32.png-59403c81d62faa7ef7582fb2468e3dd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tmp/nice_dice.png"
-dest_files=[ "res://.import/nice_dice.png-86803906cd0c50e21ddadce9f28683a7.stex" ]
+source_file="res://images/tiles/castle tile 32x32.png"
+dest_files=[ "res://.import/castle tile 32x32.png-59403c81d62faa7ef7582fb2468e3dd5.stex" ]
 
 [params]
 

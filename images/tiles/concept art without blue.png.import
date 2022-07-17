@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nice_dice.png-86803906cd0c50e21ddadce9f28683a7.stex"
+path="res://.import/concept art without blue.png-a2a9d64634494156378497710a332fa0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tmp/nice_dice.png"
-dest_files=[ "res://.import/nice_dice.png-86803906cd0c50e21ddadce9f28683a7.stex" ]
+source_file="res://images/tiles/concept art without blue.png"
+dest_files=[ "res://.import/concept art without blue.png-a2a9d64634494156378497710a332fa0.stex" ]
 
 [params]
 

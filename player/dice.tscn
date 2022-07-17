@@ -19,14 +19,13 @@ offset = Vector2( 0, -20 )
 mass = 102.041
 physics_material_override = ExtResource( 1 )
 gravity_scale = 15.0
-linear_velocity = Vector2( -10000, 0 )
 angular_damp = 2.0
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Dice"]
-scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 2 )
 
 [node name="DiceCollisionShape" type="CollisionPolygon2D" parent="Dice"]
-position = Vector2( -43.3, -50 )
+position = Vector2( -27, -31 )
+scale = Vector2( 0.63, 0.63 )
 polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )
