@@ -164,11 +164,11 @@ func _physics_process(delta: float) -> void:
 			start_time()
 	
 	time_stamina = max(0, time_stamina)
-
-
 func _on_damage_taken(damage: int) -> void:
+
+
 	invinc_start()
-	var invinc: SceneTreeTimer = get_tree().create_timer(2.0)
+	var invinc: SceneTreeTimer = get_tree().create_timer(1.0)
 	invinc.connect("timeout", self, "invinc_end")
 
 func invinc_start() -> void:

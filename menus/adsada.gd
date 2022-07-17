@@ -5,7 +5,7 @@ var game
 	
 
 func start():
-	game = load("res://tower/tower.tscn").instance()
+	game = load("res://tower/tower_denis.tscn").instance()
 	print(game)
 	add_child(game)
 
