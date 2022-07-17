@@ -10,7 +10,8 @@ func _init(direction: Vector2, force: float).(direction, force):
 	self.force *= SWIPE_K
 	
 func get_current_damage(dice):
-	return dice.level
+#	return dice.level
+	return 1
 
 # d: Dice
 func Act(d) -> void:
