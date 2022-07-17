@@ -1,4 +1,8 @@
+class_name Player
+
 extends Node2D
+
+var is_invinc: bool = false
 
 const SCALE_FACTOR = 400
 
@@ -60,6 +64,9 @@ func _ready() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	if is_invinc: 
+		return
+
 	if event.is_action_pressed("LMB") or event.is_action_pressed("RMB"):
 		start_aim()
 		
@@ -113,6 +120,19 @@ func _physics_process(delta: float) -> void:
 	
 	time_stamina = max(0, time_stamina)
 
+
+func _on_damage_taken(damage: int) -> void:
+	invinc_start()
+	var invinc: SceneTreeTimer = get_tree().create_timer(2.0)
+	invinc.connect("timeout", self, "invinc_end")
+
+func invinc_start() -> void:
+	is_invinc = true
+	$DiceGroup/Dice.Disable()
+
+func invinc_end() -> void:
+	is_invinc = false
+	$DiceGroup/Dice.Enable()
 
 func _process(_delta: float) -> void:
 	$"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)".SetStaminas(

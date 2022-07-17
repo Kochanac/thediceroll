@@ -1,6 +1,6 @@
 class_name Enemy
 
-extends KinematicBody2D
+extends Area2D
 
 # потом надо будет поменять? мб в конструкторе рандомно генерить каждый раз
 var health = 2
@@ -13,10 +13,10 @@ func die():
 	
 	
 func _on_hurtbox_area_entered(hitbox):
-	print("body entered")
-	health -= hitbox.damage
-	if health <= 0:
-		self.die()
-	print(hitbox)
+	if hitbox is Hitbox:
+		health -= hitbox.damage
+		if health <= 0:
+			self.die()
 
-
+func GetDamage() -> int:
+	return 0

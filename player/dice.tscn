@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://player/materials/dice_1.tres" type="PhysicsMaterial" id=1]
 [ext_resource path="res://images/tmp/nice_dice.png" type="Texture" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://images/tmp/arrow.png" type="Texture" id=4]
 [ext_resource path="res://player/dice_dice.gd" type="Script" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 32.0624
+[sub_resource type="CircleShape2D" id=2]
+radius = 50.0
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id=1]
+radius = 33.0
+
+[node name="DiceWithSprite" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Arrow" type="Sprite" parent="."]
@@ -17,6 +20,13 @@ visible = false
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 0, -20 )
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="hurtboxShape" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource( 2 )
 
 [node name="Dice" type="RigidBody2D" parent="."]
 mass = 102.041
@@ -29,17 +39,14 @@ script = ExtResource( 5 )
 texture = ExtResource( 2 )
 
 [node name="DiceCollisionShape" type="CollisionPolygon2D" parent="Dice"]
+visible = false
 position = Vector2( -27, -31 )
 scale = Vector2( 0.63, 0.63 )
 polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )
 disabled = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dice"]
+[node name="circle_shape" type="CollisionShape2D" parent="Dice"]
 shape = SubResource( 1 )
 
-[node name="hurtbox" type="Area2D" parent="Dice"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dice/hurtbox"]
-shape = SubResource( 1 )
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
