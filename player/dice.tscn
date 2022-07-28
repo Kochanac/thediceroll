@@ -7,7 +7,7 @@
 [ext_resource path="res://player/dice_dice.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 50.0
+radius = 28.0713
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.0
@@ -29,9 +29,10 @@ collision_mask = 2
 shape = SubResource( 2 )
 
 [node name="Dice" type="RigidBody2D" parent="."]
-mass = 102.041
+mass = 100.0
 physics_material_override = ExtResource( 1 )
 gravity_scale = 15.0
+linear_damp = 0.1
 angular_damp = 2.0
 script = ExtResource( 5 )
 

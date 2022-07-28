@@ -48,7 +48,7 @@ position = Vector2( -128, 7266 )
 position = Vector2( 112, 5873 )
 
 [node name="EnemyBasic2" parent="gfdxgfdc" instance=ExtResource( 3 )]
-position = Vector2( -100, -4.00012 )
+position = Vector2( 222, -17 )
 
 [node name="EnemyBasic3" parent="gfdxgfdc" instance=ExtResource( 3 )]
 position = Vector2( -318, 1029 )

@@ -81,7 +81,7 @@ func _on_Enemy_died(enemy):
 			var ActiveCamera = get_node("DiceGroup/Dice/Dice/Camera2D")
 			print(ActiveCamera.is_current())
 #			ActiveCamera.zoom = ActiveCamera.zoom.linear_interpolate( (Vector2(1,1) * 0.3), 0.01)
-			ActiveCamera.zoom = Vector2(0.5, 0.5)
+			#ActiveCamera.zoom = Vector2(0.5, 0.5)
 			
 #			var animation = $DiceGroup/Dice/Dice/AnimatedSprite
 #			animation.play()
