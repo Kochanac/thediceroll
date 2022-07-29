@@ -16,3 +16,5 @@ res://player/materials/dice_1.tres
 res://player/actions/action.gd
 res://player/actions/hitbox.gd
 res://player/actions/attack.tscn
+res://misc/waitgroup.gd
+res://level/level.tscn

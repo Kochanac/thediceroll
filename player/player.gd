@@ -65,14 +65,17 @@ func start_aim() -> void:
 	self.focused_dice = $DiceGroup/Dice
 	self.connect("action", focused_dice.PerformAction)
 
-func stop_aim() -> Vector2:
-	if not is_slowing:
-		start_time()
+
+var aimWg: Waitgroup = Waitgroup.new()
+func stop_aim():
+	aimWg.Add(1)
 	is_aiming = false
-	
-	var res = get_viewport().get_mouse_position()
-	return res
-	
+	await get_tree().create_timer(0.1).timeout
+	aimWg.Sub(1)
+		
+	if not is_slowing and aimWg.TryZero():
+		start_time()
+
 func _on_Enemy_died(enemy):
 	print('enemy died')
 	var dice = $DiceGroup/Dice
@@ -118,7 +121,7 @@ func _input(event: InputEvent) -> void:
 		start_aim()
 		
 	if event.is_action_released("LMB"):
-		var action_end = stop_aim()
+		stop_aim.call()
 		var force: float = min(min(mouse_offset.length() * MOUSE_SCALE,
 			Action.MAX_FORCE),
 			move_stamina / ACTION_COST * Action.MAX_FORCE)
@@ -131,7 +134,7 @@ func _input(event: InputEvent) -> void:
 		self.disconnect("action", focused_dice.PerformAction)
 		
 	if event.is_action_released("RMB"):
-		var action_end = stop_aim()
+		stop_aim()
 		var force: float = min(min(mouse_offset.length() * MOUSE_SCALE,
 			Action.MAX_FORCE),
 			power_stamina / ACTION_COST * Action.MAX_FORCE)
