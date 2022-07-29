@@ -18,9 +18,9 @@ func _ready():
 
 func register(enemy):
 	if enemy is Enemy:
-		enemy.connect("died", $Player, "_on_Enemy_died")
+		enemy.connect("died", $Player._on_Enemy_died)
 	if enemy is Coin:
-		enemy.connect("gained", $Player, "_on_Coin_gained")
+		enemy.connect("gained", $Player._on_Coin_gained)
 
 
 func _on_hurtbox_area_entered(area):

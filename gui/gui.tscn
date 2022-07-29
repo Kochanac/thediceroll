@@ -1,123 +1,117 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://mns044ju4edf"]
 
-[ext_resource path="res://gui/margin_containter.gd" type="Script" id=1]
-[ext_resource path="res://images/gui/vedro_64x64.png" type="Texture" id=2]
-[ext_resource path="res://images/gui/xp bar bg.png" type="Texture" id=3]
-[ext_resource path="res://images/gui/time bar fg.png" type="Texture" id=4]
-[ext_resource path="res://images/gui/time bar background.png" type="Texture" id=5]
-[ext_resource path="res://images/gui/attack bar fg.png" type="Texture" id=6]
-[ext_resource path="res://images/gui/move bar fg.png" type="Texture" id=7]
-[ext_resource path="res://images/gui/move bar bg.png" type="Texture" id=8]
-[ext_resource path="res://images/gui/attack bar bg.png" type="Texture" id=9]
-[ext_resource path="res://images/gui/xp bar fg.png" type="Texture" id=10]
-[ext_resource path="res://gui/Label.gd" type="Script" id=11]
+[ext_resource type="Script" path="res://gui/margin_containter.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ub5qut0wi44v" path="res://images/gui/vedro_64x64.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://5bgwr0oo01eq" path="res://images/gui/xp bar bg.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://csiswewdxfo61" path="res://images/gui/time bar fg.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d1y73njklatic" path="res://images/gui/time bar background.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://mnwn3bw8ah16" path="res://images/gui/attack bar fg.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c46nd8crja56n" path="res://images/gui/move bar fg.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dv0hnd4aao8sd" path="res://images/gui/move bar bg.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://doa81tubmpvq" path="res://images/gui/attack bar bg.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cyu6fwk5wed07" path="res://images/gui/xp bar fg.png" id="10"]
+[ext_resource type="Script" path="res://gui/Label.gd" id="11"]
 
 [node name="GUI" type="MarginContainer"]
+texture_filter = 1
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -640.0
-margin_top = -360.0
-margin_right = 640.0
-margin_bottom = 360.0
-custom_constants/margin_top = 140
-custom_constants/margin_left = 20
-script = ExtResource( 1 )
+offset_left = -640.0
+offset_top = -288.0
+offset_right = 640.0
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1")
 
-[node name="hbox" type="HBoxContainer" parent="."]
-margin_left = 20.0
-margin_top = 140.0
-margin_right = 1280.0
-margin_bottom = 720.0
-custom_constants/separation = 390
+[node name="hbox" type="MarginContainer" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1230.0
+offset_bottom = 238.0
 
-[node name="MarginContainer" type="MarginContainer" parent="hbox"]
-margin_right = 430.0
-margin_bottom = 580.0
-custom_constants/margin_top = 62
+[node name="XP bar" type="MarginContainer" parent="hbox"]
+offset_right = 430.0
+offset_bottom = 188.0
+size_flags_horizontal = 0
 
-[node name="cons and XP" type="HBoxContainer" parent="hbox/MarginContainer"]
-margin_top = 62.0
-margin_right = 430.0
-margin_bottom = 580.0
+[node name="cons and XP" type="HBoxContainer" parent="hbox/XP bar"]
+offset_right = 430.0
+offset_bottom = 188.0
 
-[node name="coins and level (vbox)" type="VBoxContainer" parent="hbox/MarginContainer/cons and XP"]
-margin_right = 430.0
-margin_bottom = 518.0
-custom_constants/separation = 14
+[node name="coins and level (vbox)" type="MarginContainer" parent="hbox/XP bar/cons and XP"]
+offset_right = 430.0
+offset_bottom = 188.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)"]
-margin_right = 430.0
-margin_bottom = 64.0
+[node name="HBoxContainer" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)"]
+offset_right = 430.0
+offset_bottom = 64.0
+size_flags_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
+[node name="TextureRect" type="TextureRect" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2")
 
-[node name="Label" type="Label" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer"]
-margin_left = 68.0
-margin_top = 25.0
-margin_right = 95.0
-margin_bottom = 39.0
+[node name="Label" type="Label" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer"]
+offset_left = 68.0
+offset_top = 19.0
+offset_right = 100.0
+offset_bottom = 45.0
 text = "x 60"
-script = ExtResource( 11 )
+script = ExtResource("11")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)"]
-margin_top = 78.0
-margin_right = 430.0
-margin_bottom = 138.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)"]
+offset_top = 128.0
+offset_right = 430.0
+offset_bottom = 188.0
+size_flags_vertical = 8
 
-[node name="level" type="TextureProgress" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer2"]
-margin_right = 430.0
-margin_bottom = 60.0
+[node name="level" type="TextureProgressBar" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer2"]
+offset_right = 430.0
+offset_bottom = 60.0
 min_value = 1.0
 max_value = 1000.0
 value = 700.0
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 10 )
+texture_under = ExtResource("3")
+texture_progress = ExtResource("10")
 
-[node name="Label" type="Label" parent="hbox/MarginContainer/cons and XP/coins and level (vbox)/HBoxContainer2"]
+[node name="Label" type="Label" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer2"]
 visible = false
-margin_left = 434.0
-margin_top = 23.0
-margin_right = 476.0
-margin_bottom = 37.0
 text = "Lvl. 20"
 
 [node name="stamina bars" type="VBoxContainer" parent="hbox"]
-margin_left = 820.0
-margin_right = 1250.0
-margin_bottom = 580.0
-rect_min_size = Vector2( 430, 0 )
-custom_constants/separation = 10
+offset_left = 750.0
+offset_right = 1180.0
+offset_bottom = 188.0
+size_flags_horizontal = 8
 
-[node name="TimeBar" type="TextureProgress" parent="hbox/stamina bars"]
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 200, 20 )
+[node name="TimeBar" type="TextureProgressBar" parent="hbox/stamina bars"]
+offset_right = 430.0
+offset_bottom = 60.0
 max_value = 1000.0
 value = 835.0
-texture_under = ExtResource( 5 )
-texture_progress = ExtResource( 4 )
+texture_under = ExtResource("5")
+texture_progress = ExtResource("4")
 
-[node name="MoveBar" type="TextureProgress" parent="hbox/stamina bars"]
-margin_top = 70.0
-margin_right = 430.0
-margin_bottom = 130.0
-rect_min_size = Vector2( 200, 20 )
+[node name="MoveBar" type="TextureProgressBar" parent="hbox/stamina bars"]
+offset_top = 64.0
+offset_right = 430.0
+offset_bottom = 124.0
 max_value = 1000.0
 value = 850.0
-texture_under = ExtResource( 8 )
-texture_progress = ExtResource( 7 )
+texture_under = ExtResource("8")
+texture_progress = ExtResource("7")
 
-[node name="PowerBar" type="TextureProgress" parent="hbox/stamina bars"]
-margin_top = 140.0
-margin_right = 430.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 200, 20 )
+[node name="PowerBar" type="TextureProgressBar" parent="hbox/stamina bars"]
+offset_top = 128.0
+offset_right = 430.0
+offset_bottom = 188.0
 max_value = 1000.0
 value = 700.0
-texture_under = ExtResource( 9 )
-texture_progress = ExtResource( 6 )
+texture_under = ExtResource("9")
+texture_progress = ExtResource("6")

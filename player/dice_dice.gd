@@ -1,9 +1,10 @@
-extends RigidBody2D
+extends RigidDynamicBody2D
 
 var teleports: Array
 var moves: Array
 
-func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	while teleports.size() > 0:
 		var teleport = teleports.front()
 		state.transform.origin += teleport

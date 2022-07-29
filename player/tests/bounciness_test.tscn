@@ -1,3 +1,61 @@
-[gd_scene format=2]
+[gd_scene load_steps=10 format=3 uid="uid://bktj6qf3bg7qg"]
+
+[ext_resource type="PackedScene" uid="uid://uw0bsne7ibj" path="res://player/player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://c1qs360ba0yiv" path="res://images/tiles/castle angle L.png" id="2_k14jw"]
+[ext_resource type="Texture2D" uid="uid://7qkks7ckloc0" path="res://images/tiles/castle tile 32x32.png" id="3_vkk74"]
+[ext_resource type="Texture2D" uid="uid://cit578mi81py0" path="res://images/tiles/castle angle R.png" id="4_2h8wy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kufor"]
+rough = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22jc6"]
+texture = ExtResource("2_k14jw")
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/next_alternative_id = 9
+0:0/0 = 0
+0:0/0/texture_offset = Vector2i(32, 0)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-49, 16.5, 16, -16, 16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkxdj"]
+texture = ExtResource("3_vkk74")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1sxd"]
+texture = ExtResource("4_2h8wy")
+texture_region_size = Vector2i(64, 32)
+0:0/0 = 0
+0:0/0/texture_offset = Vector2i(-16, 0)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 47.5, 16)
+
+[sub_resource type="TileSet" id="TileSet_gmrf7"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_kufor")
+sources/1 = SubResource("TileSetAtlasSource_22jc6")
+sources/2 = SubResource("TileSetAtlasSource_hkxdj")
+sources/3 = SubResource("TileSetAtlasSource_p1sxd")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gmrf7")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1376244, 2, 0, -1310708, 2, 0, -1245172, 2, 0, -1179636, 2, 0, -1114100, 2, 0, -1048564, 2, 0, -983028, 2, 0, -917492, 2, 0, -851956, 2, 0, -786420, 2, 0, -720884, 2, 0, -655348, 2, 0, -589812, 2, 0, -524276, 2, 0, -458740, 2, 0, -393204, 2, 0, -327668, 2, 0, -262132, 2, 0, -196596, 2, 0, -131060, 2, 0, -65524, 2, 0, 12, 2, 0, 65548, 2, 0, 131084, 2, 0, 196620, 2, 0, 262156, 2, 0, 327692, 2, 0, 393228, 2, 0, 458764, 2, 0, 524300, 2, 0, 589836, 2, 0, 589835, 2, 0, 589834, 2, 0, 589833, 2, 0, 589832, 2, 0, 589831, 2, 0, 589830, 2, 0, 589829, 2, 0, 589828, 2, 0, 589827, 2, 0, 589826, 2, 0, 589825, 2, 0, 589824, 2, 0, 655359, 2, 0, 655358, 2, 0, 655357, 2, 0, 655356, 2, 0, 655355, 2, 0, 655354, 2, 0, 655353, 2, 0, 655352, 2, 0, 655351, 2, 0, 655350, 2, 0, 655349, 2, 0, 655348, 2, 0, 655347, 2, 0, 655346, 2, 0, 655345, 2, 0, 655344, 2, 0, 589808, 2, 0, 524272, 2, 0, 458736, 2, 0, 393200, 2, 0, 327664, 2, 0, 262128, 2, 0, 196592, 2, 0, 131056, 2, 0, 65520, 2, 0, -16, 2, 0, -65552, 2, 0, -131088, 2, 0, -196624, 2, 0, -262160, 2, 0, -327696, 2, 0, -393232, 2, 0, -458768, 2, 0, -524304, 2, 0, -589840, 2, 0, -655376, 2, 0, -720912, 2, 0, -786448, 2, 0, -851984, 2, 0, -917520, 2, 0, -983056, 2, 0, -1048592, 2, 0, -1114128, 2, 0, -1179664, 2, 0, -1245200, 2, 0, -1310736, 2, 0, -1376272, 2, 0, -1441808, 2, 0, -1441807, 2, 0, -1441806, 2, 0, -1441805, 2, 0, -1441804, 2, 0, -1441803, 2, 0, -1441802, 2, 0, -1441801, 2, 0, -1441800, 2, 0, -1441799, 2, 0, -1441798, 2, 0, -1441797, 2, 0, -1441796, 2, 0, -1441795, 2, 0, -1441794, 2, 0, -1441793, 2, 0, -1507328, 2, 0, -1507327, 2, 0, -1507326, 2, 0, -1507325, 2, 0, -1507324, 2, 0, -1507323, 2, 0, -1507322, 2, 0, -1507321, 2, 0, -1507320, 2, 0, -1507319, 2, 0, -1507318, 2, 0, -1507317, 2, 0, -1507316, 2, 0, -1441780, 2, 0, 589819, 1, 0, 524285, 1, 0, 458751, 1, 0, 327681, 1, 0, 262147, 1, 0, 196613, 1, 0, 131079, 1, 0, 65545, 1, 0, 11, 1, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 65547, 2, 0, 131083, 2, 0, 196619, 2, 0, 262155, 2, 0, 327691, 2, 0, 393227, 2, 0, 458763, 2, 0, 589820, 2, 0, 524286, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 65546, 2, 0, 131082, 2, 0, 196618, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 131080, 2, 0, 131081, 2, 0)
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(211, -521)
+
+[node name="Camera2D" parent="Player/DiceGroup/Dice/Dice" index="2"]
+drag_left_margin = 0.2
+drag_right_margin = 0.2
+
+[editable path="Player"]
+[editable path="Player/DiceGroup/Dice"]

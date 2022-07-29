@@ -43,17 +43,16 @@ func Aiming(direction: Vector2, lenght: float):
 func StopAiming():
 	$Arrow.visible = false
 
-func GetLinearVelocity() -> Vector2:
-	return $Dice.linear_velocity
-
-func SetLinearVelocity(vel: Vector2):
-	$Dice.linear_velocity = vel
 
 func GetDicePosition() -> Vector2:
 	return $Dice.position
 
 
-var linear_velocity setget SetLinearVelocity, GetLinearVelocity
+@export var linear_velocity: Vector2:
+	get:
+		return $Dice.linear_velocity
+	set(vel):
+		$Dice.linear_velocity = vel
 
 func TeleportWithVector(vec: Vector2):
 	$Dice.AddTeleport(vec)

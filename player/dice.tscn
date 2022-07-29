@@ -1,53 +1,55 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://cxytxq4is2gkj"]
 
-[ext_resource path="res://player/materials/dice_1.tres" type="PhysicsMaterial" id=1]
-[ext_resource path="res://images/tmp/nice dice.png" type="Texture" id=2]
-[ext_resource path="res://player/dice.gd" type="Script" id=3]
-[ext_resource path="res://images/tmp/arrow.png" type="Texture" id=4]
-[ext_resource path="res://player/dice_dice.gd" type="Script" id=5]
+[ext_resource type="PhysicsMaterial" uid="uid://un8bkdmv5dvt" path="res://player/materials/dice_1.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bok088o75qmy3" path="res://images/tmp/nice dice.png" id="2"]
+[ext_resource type="Script" path="res://player/dice.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://drwsd2pihm8wb" path="res://images/tmp/arrow.png" id="4"]
+[ext_resource type="Script" path="res://player/dice_dice.gd" id="5"]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id="2"]
 radius = 28.0713
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 33.0
 
 [node name="DiceWithSprite" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="Arrow" type="Sprite" parent="."]
+[node name="Arrow" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource( 4 )
+texture_filter = 1
+texture = ExtResource("4")
 centered = false
-offset = Vector2( 0, -20 )
+offset = Vector2(0, -20)
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="hurtboxShape" type="CollisionShape2D" parent="hurtbox"]
-shape = SubResource( 2 )
+shape = SubResource("2")
 
-[node name="Dice" type="RigidBody2D" parent="."]
-mass = 100.0
-physics_material_override = ExtResource( 1 )
-gravity_scale = 15.0
-linear_damp = 0.1
+[node name="Dice" type="RigidDynamicBody2D" parent="."]
+physics_material_override = ExtResource("1")
+gravity_scale = 1.2
+can_sleep = false
+linear_damp = 0.5
 angular_damp = 2.0
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="Sprite" type="Sprite" parent="Dice"]
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite2D" parent="Dice"]
+texture_filter = 1
+texture = ExtResource("2")
 
 [node name="DiceCollisionShape" type="CollisionPolygon2D" parent="Dice"]
-visible = false
-position = Vector2( -27, -31 )
-scale = Vector2( 0.63, 0.63 )
-polygon = PoolVector2Array( 43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25 )
+position = Vector2(-27, -31)
+scale = Vector2(0.63, 0.63)
+polygon = PackedVector2Array(43.3, 0, 86.6, 25, 86.6, 75, 43.3, 100, 0, 75, 0, 25)
 disabled = true
 
 [node name="circle_shape" type="CollisionShape2D" parent="Dice"]
-shape = SubResource( 1 )
+visible = false
+shape = SubResource("1")
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

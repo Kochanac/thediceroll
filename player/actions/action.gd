@@ -12,5 +12,5 @@ func Act(_dice) -> void:
 
 
 func _init(direction: Vector2, force: float):
-	self.direction = direction
+	self.direction = direction.normalized()
 	self.force = force
