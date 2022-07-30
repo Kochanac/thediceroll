@@ -37,3 +37,6 @@ func Act(d) -> void:
 	
 	dice.linear_velocity = \
 		(SWIPE_VELOCITY_ADD + dice.linear_velocity.length()) * direction
+
+func get_min_stamina():
+	return Action.MAX_FORCE * 2 / 3

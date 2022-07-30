@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bafn2fjg1gb3c"]
 
-[ext_resource type="PackedScene" uid="uid://uw0bsne7ibj" path="res://player/player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c6mesg657j6d6" path="res://player/player.tscn" id="1"]
 [ext_resource type="TileSet" uid="uid://cghp62i7twlir" path="res://tower/tower.tres" id="2"]
 [ext_resource type="PackedScene" path="res://enemies/basic/enemy_lox.tscn" id="3"]
 [ext_resource type="Script" path="res://tower/tower.gd" id="4"]

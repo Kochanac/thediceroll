@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://coins/coin.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://cit578mi81py0" path="res://images/tiles/castle angle R.png" id="5_dwlb6"]
 [ext_resource type="PackedScene" path="res://enemies/basic/enemy_lox.tscn" id="6_ggyqy"]
-[ext_resource type="PackedScene" uid="uid://uw0bsne7ibj" path="res://player/player.tscn" id="7_xgwai"]
+[ext_resource type="PackedScene" uid="uid://c6mesg657j6d6" path="res://player/player.tscn" id="7_xgwai"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 

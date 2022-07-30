@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://uw0bsne7ibj"]
+[gd_scene load_steps=7 format=3 uid="uid://c6mesg657j6d6"]
 
 [ext_resource type="PackedScene" uid="uid://cxytxq4is2gkj" path="res://player/dice.tscn" id="1"]
 [ext_resource type="Script" path="res://player/player.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://mns044ju4edf" path="res://gui/gui.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://dhe50txmp8jjp" path="res://images/gui/arrow 400.png" id="4"]
+[ext_resource type="Script" path="res://player/Movement.gd" id="5_1umgd"]
+[ext_resource type="Script" path="res://player/Stamina.gd" id="6_ijou2"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("2")
@@ -32,6 +34,10 @@ drag_right_margin = 1.0
 
 [node name="GUI (margin)" parent="DiceGroup/Dice/Dice/Camera2D/CanvasLayer" instance=ExtResource("3")]
 
-[node name="MouseController" type="Node" parent="."]
+[node name="Movement" type="Node2D" parent="."]
+script = ExtResource("5_1umgd")
+
+[node name="Stamina" type="Node" parent="."]
+script = ExtResource("6_ijou2")
 
 [editable path="DiceGroup/Dice"]
