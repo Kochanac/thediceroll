@@ -1,4 +1,7 @@
 class_name Coin
+
+# TODO: rename to Pickable
+
 extends Node2D
 
 signal gained(coin)

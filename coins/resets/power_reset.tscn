@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://nanpa3vtoq3c"]
+
+[ext_resource type="Script" path="res://coins/resets/power_reset.gd" id="1_3lyr3"]
+[ext_resource type="Texture2D" uid="uid://mnwn3bw8ah16" path="res://images/gui/attack bar fg.png" id="2_hgyak"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8p1qa"]
+radius = 17.06
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ry5fh"]
+radius = 24.0
+
+[node name="PowerReset" type="StaticBody2D"]
+script = ExtResource("1_3lyr3")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+scale = Vector2(0.1, 2)
+texture = ExtResource("2_hgyak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0)
+shape = SubResource("CircleShape2D_8p1qa")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(2.5, 0)
+shape = SubResource("CircleShape2D_ry5fh")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

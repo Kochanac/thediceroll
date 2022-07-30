@@ -71,7 +71,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if $Movement.is_time_tampered():
-		if not $Stamina.spend_time_stamina(TIME_COST * delta):
+		if $Stamina.spend_time_stamina(TIME_COST * delta) < TIME_COST * delta:
 			$Movement.start_time()
 
 
@@ -81,5 +81,12 @@ func _on_damage_taken(damage: int) -> void:
 
 func _process(_delta: float) -> void:
 	var dice = $DiceGroup/Dice
-	$"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)".SetLevel(dice.experience)
+	var gui = getGUI()
+	gui.SetLevel(dice.experience)
+	gui.SetSpeed(dice.linear_velocity.length() / 100)
+	gui.SetMoney(self.money)
+	
 
+
+func getGUI() -> Control:
+	return $"DiceGroup/Dice/Dice/Camera2D/CanvasLayer/GUI (margin)"

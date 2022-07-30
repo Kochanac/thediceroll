@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://mns044ju4edf"]
+[gd_scene load_steps=14 format=3 uid="uid://mns044ju4edf"]
 
 [ext_resource type="Script" path="res://gui/margin_containter.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ub5qut0wi44v" path="res://images/gui/vedro_64x64.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://5bgwr0oo01eq" path="res://images/gui/xp bar bg.png" id="3"]
+[ext_resource type="FontFile" uid="uid://b34lo42eakw74" path="res://images/misc/VT323-Regular.ttf" id="3_nsflo"]
 [ext_resource type="Texture2D" uid="uid://csiswewdxfo61" path="res://images/gui/time bar fg.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://d1y73njklatic" path="res://images/gui/time bar background.png" id="5"]
+[ext_resource type="Script" path="res://gui/speed.gd" id="5_u8end"]
 [ext_resource type="Texture2D" uid="uid://mnwn3bw8ah16" path="res://images/gui/attack bar fg.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://c46nd8crja56n" path="res://images/gui/move bar fg.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://dv0hnd4aao8sd" path="res://images/gui/move bar bg.png" id="8"]
@@ -47,23 +49,47 @@ offset_bottom = 188.0
 offset_right = 430.0
 offset_bottom = 188.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)"]
+[node name="VBoxContainer" type="VBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)"]
+offset_right = 430.0
+offset_bottom = 188.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)/VBoxContainer"]
 offset_right = 430.0
 offset_bottom = 64.0
 size_flags_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="hbox/XP bar/cons and XP/coins and level (vbox)/VBoxContainer/HBoxContainer"]
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("2")
 
-[node name="Label" type="Label" parent="hbox/XP bar/cons and XP/coins and level (vbox)/HBoxContainer"]
+[node name="MoneyLabel" type="Label" parent="hbox/XP bar/cons and XP/coins and level (vbox)/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 68.0
-offset_top = 19.0
-offset_right = 100.0
-offset_bottom = 45.0
+offset_top = 14.0
+offset_right = 120.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_nsflo")
+theme_override_font_sizes/font_size = 32
 text = "x 60"
 script = ExtResource("11")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)/VBoxContainer"]
+offset_top = 68.0
+offset_right = 430.0
+offset_bottom = 104.0
+size_flags_vertical = 0
+
+[node name="speed" type="Label" parent="hbox/XP bar/cons and XP/coins and level (vbox)/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+texture_repeat = 1
+offset_right = 130.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("3_nsflo")
+theme_override_font_sizes/font_size = 32
+text = "SPEED: 200"
+script = ExtResource("5_u8end")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="hbox/XP bar/cons and XP/coins and level (vbox)"]
 offset_top = 128.0

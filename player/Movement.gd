@@ -50,8 +50,11 @@ func start_aim() -> void:
 var aimWg: Waitgroup = Waitgroup.new()
 func stop_aim():
 	is_aiming = false
+
+	if not is_slowing and aimWg.TryZero():
+		start_time()
 	
-	if $"../DiceGroup/Dice".linear_velocity.length() < 50:
+	if $"../DiceGroup/Dice".linear_velocity.length() / 100 < 25:
 		return
 	
 	aimWg.Add(1)

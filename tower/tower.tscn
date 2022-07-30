@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://tower/tower.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://c1qs360ba0yiv" path="res://images/tiles/castle angle L.png" id="3_ph10u"]
 [ext_resource type="Texture2D" uid="uid://7qkks7ckloc0" path="res://images/tiles/castle tile 32x32.png" id="4_ly3ri"]
-[ext_resource type="PackedScene" uid="uid://fdyi2llefi5" path="res://coins/coin.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://cit578mi81py0" path="res://images/tiles/castle angle R.png" id="5_dwlb6"]
 [ext_resource type="PackedScene" path="res://enemies/basic/enemy_lox.tscn" id="6_ggyqy"]
 [ext_resource type="PackedScene" uid="uid://c6mesg657j6d6" path="res://player/player.tscn" id="7_xgwai"]
+[ext_resource type="PackedScene" uid="uid://bqa4q00cmhd7f" path="res://coins/stamina_buff/stamina_buff.tscn" id="8_rvvpa"]
 [ext_resource type="PackedScene" uid="uid://bd62tetr7fy4t" path="res://coins/resets/time_reset.tscn" id="9_dxssw"]
 
 [sub_resource type="ShaderMaterial" id="1"]
@@ -115,18 +115,18 @@ position = Vector2(359, 1885)
 [node name="CoinsGroup" type="Node2D" parent="."]
 position = Vector2(-175, -364)
 
-[node name="Coin" parent="CoinsGroup" instance=ExtResource("5")]
-position = Vector2(270, -755)
-
-[node name="Coin2" parent="CoinsGroup" instance=ExtResource("5")]
-position = Vector2(506, 2207)
-
-[node name="Coin3" parent="CoinsGroup" instance=ExtResource("5")]
-position = Vector2(765, 2497)
-
 [node name="Coin4" parent="CoinsGroup" instance=ExtResource("9_dxssw")]
 position = Vector2(192, -1349)
 scale = Vector2(0.4, 1)
+
+[node name="Coin" parent="CoinsGroup" instance=ExtResource("8_rvvpa")]
+position = Vector2(210, -756)
+
+[node name="Coin2" parent="CoinsGroup" instance=ExtResource("8_rvvpa")]
+position = Vector2(506, 2204)
+
+[node name="Coin3" parent="CoinsGroup" instance=ExtResource("8_rvvpa")]
+position = Vector2(393, -34)
 
 [node name="Player" parent="." instance=ExtResource("7_xgwai")]
 position = Vector2(420, -2349)

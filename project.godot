@@ -54,7 +54,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://tower/tower.gd"
 }, {
-"base": "Node",
+"base": "RefCounted",
 "class": &"Waitgroup",
 "language": &"GDScript",
 "path": "res://misc/waitgroup.gd"

@@ -1,7 +1,5 @@
 class_name Waitgroup
 
-extends Node
-
 var processes: int
 var mx: Mutex
 var on_zero: Semaphore
@@ -30,3 +28,4 @@ func _init() -> void:
 	processes = 0
 	mx = Mutex.new()
 	on_zero = Semaphore.new()
+

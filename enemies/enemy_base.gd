@@ -7,13 +7,6 @@ var health = 2
 #signal died(enemy: Enemy)
 signal died(enemy)
 
-func _ready(): 
-#	self.connect("died", $Player, "_on_Enemy_died")
-# Tower/EnemyGroup/
-# говнокод
-	var tower = self.get_parent().get_parent()
-	tower.register(self)
-
 func die():
 	emit_signal("died", self)
 	queue_free()
