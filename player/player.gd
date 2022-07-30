@@ -8,12 +8,9 @@ var is_invinc: bool = false
 
 const TIME_COST: float = 1500.0
 
-
 var focused_dice: Dice = null
 
 const EXPERIENCE: int = 400
-
-const STAMINA_BUFF: int = 100
 
 signal action(dice, action)
 # signal action(dice: Dice, action: Action)
@@ -45,10 +42,13 @@ func _on_Enemy_died(enemy):
 		
 func _on_Coin_gained(coin):
 	print("coin gained")
-	#max_time_stamina += STAMINA_BUFF
-	#max_move_stamina += STAMINA_BUFF
-	#max_power_stamina += STAMINA_BUFF
-	money += 1
+	
+	if coin.get_type() == Coin.CoinType.time_reset:
+		$Stamina.reset_time_stamina()
+	
+	if coin.get_type() == Coin.CoinType.stamina_buff:
+		$Stamina.buff_all_stamina(Action.ACTION_COST)
+		money += 1
 
 
 func _ready() -> void:
@@ -64,9 +64,6 @@ func on_action_commanded(action: Action):
 
 
 func _input(event: InputEvent) -> void:
-	if is_invinc:
-		return
-
 	if event.is_action_pressed("LMB") or event.is_action_pressed("RMB"):
 		focused_dice = $Movement.focus_dice()
 		self.connect("action", focused_dice.PerformAction)

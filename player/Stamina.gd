@@ -12,6 +12,15 @@ var time_regen: float = 200
 var move_regen: float = 200
 var power_regen: float = 200
 
+
+func buff_all_stamina(buff: float) -> void:
+	max_time_stamina += buff
+	max_move_stamina += buff
+	max_power_stamina += buff
+
+
+
+
 func spend_time_stamina(val: float) -> float:
 	var spending = min(val, time_stamina)
 	
@@ -48,6 +57,12 @@ func spend_action_stamina(action: Action) -> bool:
 
 func reset_power_stamina() -> void:
 	power_stamina = max_power_stamina
+
+func reset_time_stamina() -> void:
+	time_stamina = max_time_stamina
+
+func reset_move_stamina() -> void:
+	move_stamina = max_move_stamina
 
 
 func _physics_process(delta: float) -> void:

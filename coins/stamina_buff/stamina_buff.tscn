@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://fdyi2llefi5"]
+[gd_scene load_steps=4 format=3 uid="uid://bqa4q00cmhd7f"]
 
 [ext_resource type="Texture2D" uid="uid://ub5qut0wi44v" path="res://images/gui/vedro_64x64.png" id="1"]
-[ext_resource type="Script" path="res://coins/coin.gd" id="2"]
+[ext_resource type="Script" path="res://coins/stamina_buff/stamina_buff.gd" id="1_d3cdg"]
 
 [sub_resource type="CircleShape2D" id="2"]
 radius = 41.0122
 
 [node name="Coin" type="Node2D"]
-script = ExtResource("2")
+script = ExtResource("1_d3cdg")
 
 [node name="vedro (sprite)" type="Sprite2D" parent="."]
 texture = ExtResource("1")
@@ -18,5 +18,3 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 shape = SubResource("2")
-
-[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

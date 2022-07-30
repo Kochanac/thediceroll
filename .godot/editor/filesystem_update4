@@ -15,3 +15,10 @@ res://player/actions/action.gd
 res://player/actions/attack_swipe.gd
 res://player/actions/move.gd
 res://player/Movement.gd
+res://coins/coin.tscn
+res://coins/coin.gd
+res://coins/resets/time_reset.gd
+res://coins/resets/time_reset.tscn
+res://tower/tower.gd
+res://coins/stamina_buff/stamina_buff.tscn
+res://coins/stamina_buff/stamina_buff.gd
